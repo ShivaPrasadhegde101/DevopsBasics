@@ -31,7 +31,7 @@ steps:
     script: |
       # Write your commands here
       
-      ls $(build.artifactstagingdirectory)/**/**/.war
+      ls $(build.artifactstagingdirectory)/webapp
     
 - task: PublishBuildArtifacts@1
   inputs:
