@@ -27,8 +27,12 @@ steps:
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: Bash@3
   inputs:
-    filePath: '$(build.artifactstagingdirectory)'
-    arguments: 'ls'
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      ls $(build.artifactstagingdirectory)
+    
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
