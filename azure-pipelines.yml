@@ -31,10 +31,10 @@ steps:
     script: |
       # Write your commands here
       
-      ls $(build.artifactstagingdirectory)
+      ls $(build.artifactstagingdirectory)/**/*.war
     
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/**/**/*.war'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'warfile'
     publishLocation: 'Container'
